@@ -2,6 +2,8 @@ from openai import OpenAI
 import os
 
 TOKEN = os.getenv("HF_TOKEN")
+if not TOKEN:
+    raise ValueError("HF_TOKEN environment variable not set")
 
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
