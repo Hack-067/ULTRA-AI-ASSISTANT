@@ -1,7 +1,7 @@
 from openai import OpenAI
 import os
 
-TOKEN = os.gentenv("HF_TOKEN")
+TOKEN = os.getenv("HF_TOKEN")
 
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
