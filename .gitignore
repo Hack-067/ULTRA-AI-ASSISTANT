@@ -1,0 +1,12 @@
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Android and Gradle generated files
+.gradle/
+**/build/
+local.properties
+.android-sdk/
+
+# Local secrets
+.env
