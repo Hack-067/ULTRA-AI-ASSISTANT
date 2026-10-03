@@ -61,4 +61,5 @@ class MainActivity : ComponentActivity() {
             )
         }
     }
-}
+}   val api = ApiClient()
+    api.sendMessage("Hello ULTRA")
