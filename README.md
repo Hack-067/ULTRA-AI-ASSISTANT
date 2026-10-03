@@ -1,11 +1,17 @@
-# ULTRA
+# ULTRA AI ASSISTANT
 
-Voice Controlled AI Coding Assistant
+Current Features
 
-Features:
-- Code Generation
-- Error Detection
-- Debugging
-- Voice Commands
-- Floating Window
-- GitHub Analysis
+- AI Chat
+- Voice Support
+- Repository Analysis
+- Error Debugging
+- Accessibility Service
+- Text To Speech
+
+Roadmap
+
+- Floating Bubble
+- APK Build
+- Wake Word
+- Screen Reading
