@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi import HTTPException
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 try:
     from .ultra_agent import create_client, load_system_prompt, MODEL
@@ -8,6 +9,12 @@ except ImportError:
     from ultra_agent import create_client, load_system_prompt, MODEL
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 client = None
 
 
@@ -44,6 +51,5 @@ def chat(request: ChatRequest):
     except Exception as error:
         raise HTTPException(status_code=502, detail=f"model request failed: {error}") from error
 
-    return {
-        "response": response.choices[0].message.content or "No response returned."
-    }
+    answer = response.choices[0].message.content or "No response returned."
+    return {"response": answer, "reply": answer}
